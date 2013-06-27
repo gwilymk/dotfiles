@@ -1,0 +1,5 @@
+[user]
+	name = Gwilym Kuiper
+	email = kuiper.gwilym@gmail.com
+[core]
+	excludesfile = /home/gwilym/.dotfiles/gitignore_global
