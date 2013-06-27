@@ -43,7 +43,7 @@ function parse_git_state() {
 
 function git_prompt_string() {
     local git_where="$(parse_git_branch)"
-    [ -n "$git_where" ] && echo "($PR_BLUE${git_where#(refs/heads/|tags/)}$(parse_git_state)}$RESET)"
+    [ -n "$git_where" ] && echo "($PR_BLUE${git_where#(refs/heads/|tags/)}$(parse_git_state)$RESET)"
 }
 
 setopt prompt_subst

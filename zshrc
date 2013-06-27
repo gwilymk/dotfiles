@@ -5,3 +5,4 @@ source $DIR/setopt.zsh
 source $DIR/exports.zsh
 source $DIR/prompt.zsh
 source $DIR/completion.zsh
+source $DIR/alias.zsh

@@ -7,8 +7,3 @@ for COLOUR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
 done
 
 eval export RESET='%{$reset_color%}'
-
-unset LSCOLORS
-
-export CLICOLOR=1
-export LS_COLORS='di=1;;40:ln=35;40:so=34;40:pi=36;40:ex=31;40:bd=36;44:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
