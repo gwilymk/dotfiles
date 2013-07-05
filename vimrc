@@ -14,14 +14,10 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'leafo/moonscript-vim'
 Bundle 'tpope/vim-haml'
 Bundle 'kien/ctrlp.vim'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle "garbas/vim-snipmate"
-Bundle 'LustyExplorer'
-Bundle 'Align'
 Bundle 'embear/vim-localvimrc'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'a.vim'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on
 " }}} 
@@ -125,7 +121,10 @@ inoremap <esc> <nop>
 
 " Remap space to :
 noremap <space> :
-noremap : <nop>
+
+" I killed off comma, so lets bring that back. It makes sense to have these on
+" the same key anyway.
+noremap : ,
 
 " Tab toggles NERDTree
 nnoremap <tab> :NERDTreeToggle<cr>
@@ -139,5 +138,10 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType vim setlocal foldlevelstart=0
+augroup END
+
+augroup filetype_makefile
+    autocmd!
+    autocmd Filetype Makefile setlocal noexpandtab
 augroup END
 " }}}
