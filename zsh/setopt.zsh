@@ -14,6 +14,9 @@ setopt hist_expire_dups_first
 setopt hist_find_no_dups
 # ignore commands starting with a space
 setopt hist_ignore_space
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
 
 # when completing from the middle of the word, go to the end
 setopt always_to_end
