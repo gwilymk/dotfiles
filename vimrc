@@ -60,6 +60,8 @@ if has("gui_running")
     set guioptions-=b
     set guioptions-=h
     set guifont=Inconsolata\ 11
+
+    set mouse-=a
 else
     " Tell vim to use 256 colours
     set t_Co=256
