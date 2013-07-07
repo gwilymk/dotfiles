@@ -18,6 +18,7 @@ Bundle 'embear/vim-localvimrc'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'a.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 " }}} 
