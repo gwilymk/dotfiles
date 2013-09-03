@@ -7,21 +7,23 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'vectorstorm/vim-sensible'
-Bundle 'tpope/vim-tbone'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Townk/vim-autoclose'
 Bundle 'leafo/moonscript-vim'
 Bundle 'tpope/vim-haml'
 Bundle 'kien/ctrlp.vim'
 Bundle 'embear/vim-localvimrc'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'a.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-fugitive'
+Bundle 'tikhomirov/vim-glsl'
+Bundle 'majutsushi/tagbar'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
-" }}} 
+filetype on
+" }}}
 
 " Misc settings {{{
 
@@ -34,6 +36,9 @@ let localleader=','
 
 " Stop vim-sensible from remapping keys.
 let g:sensible_suppress_maps=1
+
+" Allow any commands to be in .lvimrc
+let g:localvimrc_sandbox=0
 
 " Set the tabs to something more preferable
 set expandtab
@@ -60,7 +65,7 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=b
     set guioptions-=h
-    set guifont=Inconsolata\ 11
+    set guifont=Inconsolata\ for\ Powerline\ 11
 
     set mouse-=a
 else
@@ -68,16 +73,8 @@ else
     set t_Co=256
 endif
 " Status line
-set statusline=
-set statusline +=%1*\ %n\ %*            "buffer number
-set statusline +=%5*%{&ff}%*            "file format
-set statusline +=%3*%y%*                "file type
-set statusline +=%4*\ %<%F%*            "full path
-set statusline +=%2*%m%*                "modified flag
-set statusline +=%1*%=%5l%*             "current line
-set statusline +=%2*/%L%*               "total lines
-set statusline +=%1*%4v\ %*             "virtual column number
-set statusline +=%2*0x%04B\ %*          "character under cursor
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'jellybeans'
 " }}}
 
 " Control + something commands {{{
@@ -93,6 +90,9 @@ noremap <c-k> <c-w>k
 " }}}
 
 " Leader Commands {{{
+" Alternate
+nnoremap <leader>a :A<cr>
+
 " Execute Lua
 vnoremap <leader>el :! lua<cr>
 
@@ -106,7 +106,10 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Split Window
-nnoremap <leader>sw :vsplit<cr>
+nnoremap <leader>vs :vsplit<cr>
+
+" ControlPTags
+nnoremap <leader><leader> :CtrlPTag<cr>
 " }}}
 
 " Abbreviations {{{
@@ -129,8 +132,8 @@ noremap <space> :
 " the same key anyway.
 noremap : ,
 
-" Tab toggles NERDTree
-nnoremap <tab> :NERDTreeToggle<cr>
+" F8 toggles tagbar
+nnoremap <f8> :TagbarToggle<cr>
 
 " Save with sudo
 ca w!! w !sudo tee % > /dev/null
@@ -141,10 +144,5 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType vim setlocal foldlevelstart=0
-augroup END
-
-augroup filetype_makefile
-    autocmd!
-    autocmd Filetype Makefile setlocal noexpandtab
 augroup END
 " }}}

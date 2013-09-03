@@ -49,3 +49,5 @@ function git_prompt_string() {
 setopt prompt_subst
 
 PROMPT='${PR_GREEN}%n${RESET}@${PR_BLUE}%m${RESET} ${PR_YELLOW}[%~]${RESET} $(git_prompt_string) '
+
+bindkey -v
