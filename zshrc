@@ -6,4 +6,4 @@ source $DIR/exports.zsh
 source $DIR/prompt.zsh
 source $DIR/completion.zsh
 source $DIR/alias.zsh
-source $DIR/syntax-hl/zsh-syntax-hightlighting.zsh
+source $DIR/syntax-hl/zsh-syntax-highlighting.zsh
