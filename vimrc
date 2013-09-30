@@ -20,6 +20,12 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'gkz/vim-ls'
+Bundle 'xolox/vim-notes'
+Bundle 'xolox/vim-misc'
+Bundle 'wavded/vim-stylus'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'othree/html5.vim'
 
 filetype plugin indent on
 filetype on
@@ -40,6 +46,9 @@ let g:sensible_suppress_maps=1
 " Allow any commands to be in .lvimrc
 let g:localvimrc_sandbox=0
 
+" Set the note directory to something better
+let g:notes_directories = ['~/documents/Copy/notes']
+
 " Set the tabs to something more preferable
 set expandtab
 set shiftwidth=4
@@ -49,7 +58,7 @@ set softtabstop=4
 set ignorecase
 set smartcase
 
-" Hide all the error messages
+" Hide all buffers rather then close them
 set hidden
 
 " I hate it beeping at me
@@ -144,5 +153,17 @@ augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
     autocmd FileType vim setlocal foldlevelstart=0
+augroup END
+
+augroup filetype_ls
+    autocmd!
+    au BufNewFile,BufReadPost *.ls setl foldmethod=indent nofoldenable
+    au BufNewFile,BufReadPost *.ls setl shiftwidth=2 expandtab
+augroup END
+
+augroup filetype_styl
+    autocmd!
+    au BufNewFile,BufReadPost *.styl setl foldmethod=indent nofoldenable
+    au BufNewFile,BufReadPost *.styl setl shiftwidth=2 expandtab
 augroup END
 " }}}
