@@ -3,3 +3,5 @@
 	email = kuiper.gwilym@gmail.com
 [core]
 	excludesfile = /home/gwilym/.dotfiles/gitignore_global
+[color]
+	ui = auto

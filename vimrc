@@ -26,6 +26,8 @@ Bundle 'xolox/vim-misc'
 Bundle 'wavded/vim-stylus'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'othree/html5.vim'
+Bundle 'redcode.vim'
+Bundle 'fish-syntax'
 
 filetype plugin indent on
 filetype on
@@ -53,6 +55,9 @@ let g:notes_directories = ['~/documents/Copy/notes']
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" Actually set the shell
+set shell=bash
 
 " This is much nicer
 set ignorecase
@@ -166,4 +171,10 @@ augroup filetype_styl
     au BufNewFile,BufReadPost *.styl setl foldmethod=indent nofoldenable
     au BufNewFile,BufReadPost *.styl setl shiftwidth=2 expandtab
 augroup END
+
+augroup filetype_red
+    autocmd!
+    au BufNewFile,BufReadPost *.red setl ft=redcode
+augroup END
+
 " }}}
