@@ -20,14 +20,12 @@ Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'gkz/vim-ls'
-Bundle 'xolox/vim-notes'
-Bundle 'xolox/vim-misc'
-Bundle 'wavded/vim-stylus'
-Bundle 'digitaltoad/vim-jade'
 Bundle 'othree/html5.vim'
-Bundle 'redcode.vim'
-Bundle 'fish-syntax'
+" Bundle 'Rip-Rip/clang_complete'
+Bundle 'ervandew/supertab'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'gerw/vim-latex-suite'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 filetype on
@@ -36,7 +34,7 @@ filetype on
 " Misc settings {{{
 
 set relativenumber
-colorscheme jellybeans
+set number
 
 " Set <leader> to something more reachable
 let mapleader=','
@@ -86,15 +84,32 @@ else
     " Tell vim to use 256 colours
     set t_Co=256
 endif
+
+let g:solarized_termcolors=256
+colorscheme solarized
+set background=dark
+
 " Status line
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'jellybeans'
+
+" Completion stuff
+let g:clang_library_path = '/home/gwilym/install/usr/lib/'
+let g:clang_close_preview = 1
+let g:clang_complete_macros = 1
+set completeopt=menu,longest
+
+" and make the defaults nice
+let g:clang_complete_auto = 0
+let g:SuperTabDefaultCompletionType = "context"
+let g:clang_complete_copen = 1
+
+" disable visual bell
+set t_vb=
 " }}}
 
 " Control + something commands {{{
-" Type control-u in either insert or normal mode to change a word to uppercase
+" Type control-u in either insert to change a word to uppercase
 inoremap <c-u> <esc>viwUea
-nnoremap <c-u> viwUe
 
 " Allow Control-movement to move between splits
 noremap <c-l> <c-w>l
@@ -131,13 +146,8 @@ iabbrev @@ kuiper.gwilym@gmail.com
 " }}}
 
 " Random other remaps {{{
-noremap L $
-noremap H 0
 noremap j gj
 noremap k gk
-inoremap jk <esc>
-inoremap kj <esc>
-inoremap <esc> <nop>
 
 " Remap space to :
 noremap <space> :

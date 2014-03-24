@@ -87,5 +87,3 @@ while true
 
     old_print output
     output = ""
-
-    os.execute "sleep 2"
