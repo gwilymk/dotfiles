@@ -1,6 +1,6 @@
 [user]
 	name = Gwilym Kuiper
-	email = kuiper.gwilym@gmail.com
+	email = gw@ilym.me
 [core]
 	excludesfile = /home/gwilym/.dotfiles/gitignore_global
 [color]

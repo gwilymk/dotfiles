@@ -7,7 +7,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'vectorstorm/vim-sensible'
-Bundle 'flazz/vim-colorschemes'
 Bundle 'leafo/moonscript-vim'
 Bundle 'tpope/vim-haml'
 Bundle 'kien/ctrlp.vim'
@@ -15,17 +14,16 @@ Bundle 'embear/vim-localvimrc'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'a.vim'
 Bundle 'tikhomirov/vim-glsl'
-Bundle 'majutsushi/tagbar'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'othree/html5.vim'
-" Bundle 'Rip-Rip/clang_complete'
-Bundle 'ervandew/supertab'
-Bundle 'nsf/gocode', {'rtp': 'vim/'}
 Bundle 'gerw/vim-latex-suite'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'peterhoeg/vim-qml'
+Bundle 'fatih/vim-go'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 filetype on
@@ -48,11 +46,6 @@ let g:localvimrc_sandbox=0
 
 " Set the note directory to something better
 let g:notes_directories = ['~/documents/Copy/notes']
-
-" Set the tabs to something more preferable
-set expandtab
-set shiftwidth=4
-set softtabstop=4
 
 " Actually set the shell
 set shell=bash
@@ -77,7 +70,7 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=b
     set guioptions-=h
-    set guifont=Inconsolata\ for\ Powerline\ 11
+    set guifont=Inconsolata\ for\ Powerline\ 14
 
     set mouse-=a
 else
@@ -91,17 +84,6 @@ set background=dark
 
 " Status line
 let g:airline_powerline_fonts = 1
-
-" Completion stuff
-let g:clang_library_path = '/home/gwilym/install/usr/lib/'
-let g:clang_close_preview = 1
-let g:clang_complete_macros = 1
-set completeopt=menu,longest
-
-" and make the defaults nice
-let g:clang_complete_auto = 0
-let g:SuperTabDefaultCompletionType = "context"
-let g:clang_complete_copen = 1
 
 " disable visual bell
 set t_vb=
